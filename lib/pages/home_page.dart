@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           });
           
           if (_recognizedText.isNotEmpty) {
-            _voiceService.speak('You said: \');
+            _voiceService.speak('You said: ${result.recognizedWords}');
           }
         }
       });

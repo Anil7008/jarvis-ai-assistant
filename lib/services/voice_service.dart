@@ -1,31 +1,26 @@
 ﻿import 'package:flutter_tts/flutter_tts.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:speech_to_text/speech_to_text.dart';
 
 class VoiceService {
   final FlutterTts _tts = FlutterTts();
-  final stt.SpeechToText _speechToText = stt.SpeechToText();
-  
+  final SpeechToText _speechToText = SpeechToText();
   bool _isListening = false;
-  String _recognizedText = '';
 
-  bool get isListening => _isListening;
-  String get recognizedText => _recognizedText;
-
-  Future<void> initializeSpeech() async {
+  Future<void> initializeSpeechToText() async {
     await _speechToText.initialize(
-      onError: (error) => print('Error: \Could not find a part of the path 'C:\Users\OO7\jarvis-ai-assistant\lib\services\voice_service.dart'. The term 'q' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. The term 'flutter' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. The term 'flutter' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.'),
-      onStatus: (status) => print('Status: \'),
+      onStatus: (status) => print('Status: $status'),
+      onError: (error) => print('Error: $error'),
     );
   }
 
-  Future<void> startListening() async {
+  Future<void> startListening(Function(String) onResult) async {
     if (!_isListening) {
       bool available = await _speechToText.initialize();
       if (available) {
         _isListening = true;
         _speechToText.listen(
           onResult: (result) {
-            _recognizedText = result.recognizedWords;
+            onResult(result.recognizedWords);
           },
         );
       }
