@@ -1,4 +1,4 @@
-﻿name: jarvis_a_i_assistant
+name: jarvis_a_i_assistant
 description: A new Flutter project.
 
 environment:
@@ -49,11 +49,3 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/fonts/
-
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700

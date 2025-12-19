@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'home_page_model.dart';
@@ -41,10 +41,10 @@ class _HomePageState extends State<HomePage> {
           automaticallyImplyLeading: false,
           title: Text(
             'Jarvis AI Assistant',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-              fontFamily: 'Poppins',
+            style: TextStyle(
               color: Colors.white,
               fontSize: 22.0,
+              fontWeight: FontWeight.bold,
             ),
           ),
           actions: const [],
@@ -79,9 +79,10 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
                         'Jarvis',
-                        style: FlutterFlowTheme.of(context).displaySmall.override(
-                          fontFamily: 'Poppins',
+                        style: TextStyle(
                           color: Colors.blue,
+                          fontSize: 32.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -89,9 +90,9 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Text(
                         'Your AI Assistant',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
+                        style: TextStyle(
                           color: Colors.grey[600],
+                          fontSize: 14.0,
                         ),
                       ),
                     ),
